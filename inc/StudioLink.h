@@ -25,13 +25,10 @@ typedef enum _tagSTDUIO_LINK_CONNECTION_STATUS {
 } STUDIO_LINK_CONNECTION_STATUS;
 
 typedef void(*STUDIO_LINK_STATUS_CALLBACK)(
-    const char* device,
-    const size_t deviceLength,
     const STUDIO_LINK_CONNECTION_STATUS status);
 
 typedef void(*STUDIO_LINK_LEVEL_CALLBACK)(
-    const char* device,
-    const size_t deviceLength,
+    const STUDIO_LINK_DEVICE_TYPE deviceType,
     const float level);
 
 #define STUDIO_LINK_DEVICE_NAME_LENGTH 256
