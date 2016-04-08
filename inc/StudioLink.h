@@ -15,6 +15,13 @@
 
 extern "C" {
 
+typedef enum _tagSTDUIO_LINK_DEVICE_TYPE {
+    MICROPHONE,
+    HEADPHONE,
+    INVALID_DEVICE_TYPE,
+    MAX_DEVICE_TYPE = INVALID_DEVICE_TYPE
+} STUDIO_LINK_DEVICE_TYPE;
+
 typedef enum _tagSTDUIO_LINK_CONNECTION_STATUS {
     CONNECTING,
     CONNECTED,
@@ -59,13 +66,6 @@ bool StudioLinkConnect(const STUDIO_LINK_CONNECTION* connectionParameters);
 bool StudioLinkGetLocalId(char* localId, const size_t localIdLength);
 
 void StudioLinkDisconnect();
-
-typedef enum _tagSTDUIO_LINK_DEVICE_TYPE {
-    MICROPHONE,
-    HEADPHONE,
-    INVALID_DEVICE_TYPE,
-    MAX_DEVICE_TYPE = INVALID_DEVICE_TYPE
-} STUDIO_LINK_DEVICE_TYPE;
     
 #define STUDIO_LINK_MAX_DEVICE_COUNT 32
 
